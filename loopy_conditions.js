@@ -7,6 +7,15 @@
  * @return { Number }
  */
 
+function greaterNumber(a, b){
+	if(a > b){
+		return a; 
+	}
+	else{
+		return b;
+	}
+}
+greaterNumber(10, 50);
 
 /**
  * Create a function called 'stringOfNumbers'.
@@ -18,6 +27,16 @@
  * @return { String }
  */
 
+function stringOfNumbers(x){
+		var numberArray = [];
+	for (var i = 0; i < x; i++){
+		numberArray += i;
+	}
+	return numberArray;
+}
+
+stringOfNumbers(3);
+
 
 /**
  * Create a function called 'sumOfArray'.
@@ -28,6 +47,21 @@
  * @return { Number }
  */
 
+function sumOfArray(array){
+	var total = 0;
+	var x = array.toString();
+	 if(x.includes("a") || x.includes("e") || x.includes("i") || x.includes("o") || x.includes("u") || x.includes("y")){
+    console.log("Numbers Only!");
+  }
+  else{
+    for(var i = 0; i < array.length; i++){
+      total += array[i];
+    }
+    console.log(total);
+    return total;
+  }
+}
+sumOfArray([1, 2, 3, 4, 5]);
 
 /**
  * Create a function called 'getEvens'.
@@ -36,7 +70,29 @@
  * @param  { array } arr
  * @return { array }
  */
-
+function getEvens(array){
+  var length =  array.length;
+  var evenArray = [];
+  for(var i = 0; i < length; i++){
+  	var y = array[0].toString().split("").pop(); 
+  	if(y == 0 || y == 2 || y == 4 || y == 6 || y == 8){
+  		evenArray.push(array[0]);
+  		array.shift();
+  	}
+  	else{
+  		array.shift();
+  	}  
+  }
+  if(evenArray.length <= 0){
+    console.log("No even numbers in this array!")
+    return "No even numbers in this array!";
+  }
+  else{
+    console.log(evenArray);
+    return evenArray;
+  }
+}
+getEvens([2, 4, 6, 1163, 2048, 1207]);
 
 /**
  * Create a function called 'getOdds'.
@@ -45,7 +101,29 @@
  * @param  { array } arr
  * @return { array }
  */
-
+function getOdds(array){
+  var length =  array.length;
+  var oddArray = [];
+  for(var i = 0; i < length; i++){
+  	var y = array[0].toString().split("").pop(); 
+  	if(y == 1 || y == 3 || y == 5 || y == 7 || y == 9){
+  		oddArray.push(array[0]);
+  		array.shift();
+  	}
+  	else{
+  		array.shift();
+  	}  
+  }
+  if(oddArray.length <= 0){
+    console.log("No odd numbers in this array!")
+    return "No odd numbers in this array!";
+  }
+  else{
+    console.log(oddArray);
+    return oddArray;
+  }
+}
+getOdds([1, 2, 4, 7, 1136, 2147, -1]);
 
 /**
  * Create a function called 'calculate'.
@@ -61,3 +139,24 @@
  * @param  { String } operator ('add', subtract, 'multiply', 'divide')
  * @return { Number/String }
  */
+function calculate(number1, number2, operator){
+  if (operator == "add" || operator == "addition" || operator  == "sum"){
+    output = number1 + number2;
+  }
+  else if (operator == "subtract" || operator == "subtraction" || operator == "difference"){
+    output = number1 - number2;
+  }
+  else if (operator == "multiply" || operator == "multiplication" || operator == "product"){
+    output = number1 * number2;
+  }
+  else if (operator == "divide" || operator == "division" || operator == "quotient"){
+    output = number1 / number2;
+  }
+  else{
+  	console.log("Invalid operator");
+    return "Invalid operator";
+  }
+  console.log("Your number is " + output);
+  return output;
+}
+calculate(50, 27, "multiply");
