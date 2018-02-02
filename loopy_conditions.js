@@ -156,7 +156,7 @@ function calculate(number1, number2, operator){
   	console.log("Invalid operator");
     return "Invalid operator";
   }
-  console.log("Your number is " + output);
+  console.log("Learn to math but your numbers are " + output);
   return output;
 }
 calculate(50, 27, "multiply");
